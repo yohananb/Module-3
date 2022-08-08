@@ -25,15 +25,20 @@ function generatePassword(){
   
   
   if (passwordlength === null){
-    alert("You must choose a number");
-    generatePassword()
+    while(passwordlength === null){
+      alert("You must choose a number");
+      passwordlength = prompt("How many character you want in your password? Pick a number 8 - 128")
+    }
+}
+if (passwordlength < 8 || passwordlength > 128) {
+  alert("You must choose a number between 8 - 128");
+  passwordlength = prompt("How many character you want in your password? Pick a number 8 - 128")
   }
 
-
-
-    // if (passwordlength <= 7 || passwordlength =>129)
-    //     alert("You must choose a number");
   
+  
+  
+
   var lowercase = confirm("Will this password contain lowercase characters?")
   var uppercase = confirm("Will this password contain uppercase characters?")
   var numbers = confirm("Will this password contain numbers?")
